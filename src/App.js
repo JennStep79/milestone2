@@ -7,6 +7,8 @@ import Categories from "./Components/Categories";
 function App() {
   return (
     <div>
+      <Home/>
+      <LetsGetWild/>
       <Categories />
     </div>
   );

@@ -3,3 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.tomb {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  padding: 1em;
+  margin: 1em;
+}

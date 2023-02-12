@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../App.css";
 
 function Categories() {
     const [categories, setCategories] = useState([]);
@@ -14,16 +15,18 @@ function Categories() {
 
     let mapCategories = categories.map((category, index) => {
         return (
-        <div key={index}>
+        <div key={index} className="tomb">
             <img src={require(`../img/${category.image}.png`)} alt={category.name}/>
-            <h1>{category.name}</h1>
-            <p>{category.description}</p>
+            <div>
+                <h1>{category.name}</h1>
+                <p>{category.description}</p>
+            </div>
         </div>
         )
     });
 
     return (
-        <div>
+        <div className="container">
             {mapCategories}
         </div>
     )
