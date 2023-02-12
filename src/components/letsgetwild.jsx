@@ -1,5 +1,4 @@
-import './App.css'
-import React from 'react'
+import '../App.css';
 
 function LetsGetWild(){
     return(
@@ -9,4 +8,4 @@ function LetsGetWild(){
 
 
 
-export default LetsGetWild
+export default LetsGetWild;

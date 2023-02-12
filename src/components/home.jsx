@@ -1,5 +1,4 @@
-import './App.css'
-import React from 'react'
+import '../App.css';
 
 function Home(){
     return(
@@ -9,6 +8,6 @@ function Home(){
 
 
 
-export default Home
+export default Home;
 
 
