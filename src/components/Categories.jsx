@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Category from "./Category";
 
 function Categories() {
     const [categories, setCategories] = useState([]);
@@ -14,7 +13,13 @@ function Categories() {
     }, []);
 
     let mapCategories = categories.map((category, index) => {
-        <Category key={index} data={category}/>
+        return (
+        <div key={index}>
+            <img src={require(`../img/${category.image}.png`)} alt={category.name}/>
+            <h1>{category.name}</h1>
+            <p>{category.description}</p>
+        </div>
+        )
     });
 
     return (
