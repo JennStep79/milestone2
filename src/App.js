@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./css/App.css";
-import Home from './components/home';
-import Categories from "./components/Categories";
-import CategoryPage from "./components/CategoryPage";
+import Categories from "./components/categories";
+import CategoryPage from "./components/categoriespage";
 import CategoryContext from "./context/CategoryContext";
 
 function App() {
@@ -27,7 +26,9 @@ function App() {
   return (
     <CategoryContext.Provider value={categories}>
       <Router>
-        <Link className="link" to="/"><h1>Take Me Home</h1></Link>
+        <Link to="/">
+          <h1>Buck It</h1>
+        </Link>
         <Routes>
           <Route path="/" element={<Categories />}/>
           {mapPages}

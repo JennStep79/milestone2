@@ -6,13 +6,13 @@
   box-sizing: border-box;
 }
 :root {
-  --cyan: #4cc9f0;
-  --blue: #4361ee;
   --hotpink: #f72585;
-  --purple: #7209b7;
   --lightpurple: #9f7af5;
+  --purple: #7209b7;
   --darkpurple: #3a0ca3;
-  --limegreen: #9EF01A;
+  --blue: #4361ee;
+  --cyan: #4cc9f0;
+  --green: #99CC63;
 }
 body {
   background: #0c0c0c;
@@ -22,30 +22,31 @@ p {
   color: white;
 }
 .tomb {
-  display: inline-flex;
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  background: #111111;
+  border-radius: 1em;
   max-width: 900px;
   padding: 1em;
   margin: 1em;
-  border-radius: 1em;
-  background: #141414;
   position: relative;
-}
-.tomb::before {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  width: 20em;
-  height: 20em;
-  left: 5.2em;
 }
 .tomb img {
   z-index: 1;
 }
 .tomb p {
   padding: 1em;
+}
+.tomb::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  height: 18em;
+  width: 18em;
+  left: 6.2em;
+  top: 5.7em;
 }
 .tomb:nth-child(1)::before {
   background-color: var(--hotpink);
@@ -67,9 +68,24 @@ p {
 }
 .link {
   text-decoration: none;
-  color: var(--limegreen);
+  color: var(--green);
+  position: relative;
+}
+.link::before {
+  content: "";
+  position: absolute;
+  background: white;
+  height: 2px;
+  width: 0;
+  left: -10em;
+  bottom: 1em;
+  transition: 500ms;
+}
+.link:hover::before {
+  width: 20em;
 }
 .container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
