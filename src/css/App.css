@@ -8,7 +8,14 @@
   --blue: #4361ee;
   --hotpink: #f72585;
   --purple: #7209b7;
+  --lightpurple: #9f7af5;
   --darkpurple: #3a0ca3;
+}
+body {
+  background: black;
+}
+p {
+  color: white;
 }
 .tomb {
   display: inline-flex;
@@ -18,4 +25,39 @@
   max-width: 800px;
   padding: 1em;
   margin: 1em;
+  position: relative;
+}
+.tomb::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 20em;
+  height: 20em;
+  left: 6.2em;
+  z-index: -1;
+}
+.tomb:nth-child(1)::before {
+  background-color: var(--hotpink);
+}
+.tomb:nth-child(2)::before {
+  background-color: var(--lightpurple);
+}
+.tomb:nth-child(3)::before {
+  background-color: var(--purple);
+}
+.tomb:nth-child(4)::before {
+  background-color: var(--darkpurple);
+}
+.tomb:nth-child(5)::before {
+  background-color: var(--blue);
+}
+.tomb:nth-child(6)::before {
+  background-color: var(--cyan);
+}
+.tomb img {
+  margin: 1em;
+}
+.link {
+  text-decoration: none;
+  color: white;
 }

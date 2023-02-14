@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./css/App.css";
 import Home from './components/home';
-import LetsGetWild from './components/letsgetwild';
 import Categories from "./components/Categories";
 import CategoryPage from "./components/CategoryPage";
 import CategoryContext from "./context/CategoryContext";
