@@ -11,7 +11,7 @@ function Categories() {
         <div key={index} className="tomb">
             <img src={require(`../img/${category.name}.png`)} alt={category.title}/>
             <div>
-                <Link className="link" to={`/${category.name}`}><h1>{category.title}</h1></Link>
+                <Link className="link" to={`/${category.name}`}><h1>❝{category.title}❞</h1></Link>
                 <p>{category.description}</p>
             </div>
         </div>
