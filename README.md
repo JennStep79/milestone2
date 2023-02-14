@@ -14,6 +14,13 @@ To use Buck-It, browse through the categories for the types of activities you ar
 * Express Version 4.18.2
 * Sequelize Version 6.28.0
 
+## Collaborators:
+***
+* Alice Weng
+* Diana Cano
+* Aisha Rincon
+* Jennifer Stephens
+
 
 
 
