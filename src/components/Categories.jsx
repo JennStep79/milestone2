@@ -1,19 +1,10 @@
-import { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import "../css/App.css";
-import CategoryPage from "./CategoryPage";
+import CategoryContext from "../context/CategoryContext";
 
 function Categories() {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("http://localhost:3001/api/categories")
-            const data = await response.json()
-            setCategories(data);
-        }
-        fetchData();
-    }, []);
+    const categories = useContext(CategoryContext);
 
     let mapCategories = categories.map((category, index) => {
         return (
@@ -27,18 +18,9 @@ function Categories() {
         )
     });
 
-    let mapPages = categories.map((category, index) => {
-        return (
-            <Route key={index} path={`/${category.name}`} element={<CategoryPage category={category}/>}/>
-        )
-    });
-
     return (
         <div className="container">
             {mapCategories}
-            <Routes>
-                {mapPages}
-            </Routes>
         </div>
     )
 }
