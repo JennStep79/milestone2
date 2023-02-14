@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./css/App.css";
 import Home from './components/home';
 import LetsGetWild from './components/letsgetwild';
@@ -28,8 +28,7 @@ function App() {
   return (
     <CategoryContext.Provider value={categories}>
       <Router>
-        <Home />
-        <LetsGetWild />
+        <Link to="/"><Home /></Link>
         <Routes>
           <Route path="/" element={<Categories />}/>
           {mapPages}

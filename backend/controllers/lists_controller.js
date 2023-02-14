@@ -2,13 +2,8 @@ const router = require("express").Router();
 const db = require("../models");
 const { List } = db;
 
-router.get("/", (req, res) => {
-    try {
-        List.findAll()
-            .then(lists => res.json(lists));
-    } catch {
-        res.send("Error.");
-    }
+router.get("/:id", (req, res) => {
+    List.findAll({ where: {category_id: `${req.params.id}`} });
 });
 
 module.exports = router;
