@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="src/img/logo.png" alt="Buck-It!" width="80px" height="80px">
+  <img src="src/img/logo.png" alt="Buck-It!" width="150px" height="100px">
 </p>
 <h1 align="center">Buck-It!</h1>
 
