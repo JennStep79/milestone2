@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "../css/App.css";
+import CategoryPage from "./CategoryPage";
 
 function Categories() {
     const [categories, setCategories] = useState([]);
@@ -21,16 +22,22 @@ function Categories() {
             <div>
                 <Link to={`/${category.name}`}><h1>{category.title}</h1></Link>
                 <p>{category.description}</p>
-                <Route path={`/${category.name}`} element={<CategoryPage />}/>
             </div>
         </div>
         )
     });
 
+    let mapPages = categories.map((category, index) => {
+        return (
+            <Route key={index} path={`/${category.name}`} element={<CategoryPage category={category}/>}/>
+        )
+    });
+
     return (
         <div className="container">
+            {mapCategories}
             <Routes>
-                {mapCategories}
+                {mapPages}
             </Routes>
         </div>
     )

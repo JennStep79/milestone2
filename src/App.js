@@ -9,9 +9,6 @@ function App() {
     <Router>
       <Home />
       <LetsGetWild />
-      <Routes>
-        <Route path="/" element={<Categories/>}/>
-      </Routes>
     </Router>
   );
 }
