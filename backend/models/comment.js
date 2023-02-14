@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({List}) {
       // define association here
-      {Comment.belongsTo(List, {foreignKey:"list_id"})}
+      Comment.belongsTo(List, {foreignKey:"list_id"})
     }
   }
   Comment.init({
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     comment: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
   }, {
     sequelize,
     modelName: 'Comment',

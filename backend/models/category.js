@@ -19,11 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    image: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },

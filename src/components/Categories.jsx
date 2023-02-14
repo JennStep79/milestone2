@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../css/App.css";
 
 function Categories() {
@@ -16,10 +17,11 @@ function Categories() {
     let mapCategories = categories.map((category, index) => {
         return (
         <div key={index} className="tomb">
-            <img src={require(`../img/${category.image}.png`)} alt={category.name}/>
+            <img src={require(`../img/${category.name}.png`)} alt={category.title}/>
             <div>
-                <h1>{category.name}</h1>
+                <Link to={`/${category.name}`}><h1>{category.title}</h1></Link>
                 <p>{category.description}</p>
+                <Route path={`/${category.name}`} element={<CategoryPage />}/>
             </div>
         </div>
         )
@@ -27,7 +29,9 @@ function Categories() {
 
     return (
         <div className="container">
-            {mapCategories}
+            <Routes>
+                {mapCategories}
+            </Routes>
         </div>
     )
 }
