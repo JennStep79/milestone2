@@ -27,7 +27,7 @@ function App() {
   return (
     <CategoryContext.Provider value={categories}>
       <Router>
-        <Link to="/"><Home /></Link>
+        <Link className="link" to="/"><h1>Take Me Home</h1></Link>
         <Routes>
           <Route path="/" element={<Categories />}/>
           {mapPages}

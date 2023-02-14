@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +12,11 @@
   --purple: #7209b7;
   --lightpurple: #9f7af5;
   --darkpurple: #3a0ca3;
+  --limegreen: #9EF01A;
 }
 body {
-  background: black;
+  background: #0c0c0c;
+  font-family: "Inter", sans-serif;
 }
 p {
   color: white;
@@ -22,9 +26,11 @@ p {
   text-align: center;
   align-items: center;
   justify-content: center;
-  max-width: 800px;
+  max-width: 900px;
   padding: 1em;
   margin: 1em;
+  border-radius: 1em;
+  background: #141414;
   position: relative;
 }
 .tomb::before {
@@ -33,8 +39,13 @@ p {
   border-radius: 50%;
   width: 20em;
   height: 20em;
-  left: 6.2em;
-  z-index: -1;
+  left: 5.2em;
+}
+.tomb img {
+  z-index: 1;
+}
+.tomb p {
+  padding: 1em;
 }
 .tomb:nth-child(1)::before {
   background-color: var(--hotpink);
@@ -54,10 +65,13 @@ p {
 .tomb:nth-child(6)::before {
   background-color: var(--cyan);
 }
-.tomb img {
-  margin: 1em;
-}
 .link {
   text-decoration: none;
-  color: white;
+  color: var(--limegreen);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
