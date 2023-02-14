@@ -1,24 +1,17 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import "../css/App.css";
+import CategoryContext from "../context/CategoryContext";
 
 function Categories() {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("http://localhost:3001/api/categories")
-            const data = await response.json()
-            setCategories(data);
-        }
-        fetchData();
-    }, []);
+    const categories = useContext(CategoryContext);
 
     let mapCategories = categories.map((category, index) => {
         return (
         <div key={index} className="tomb">
-            <img src={require(`../img/${category.image}.png`)} alt={category.name}/>
+            <img src={require(`../img/${category.name}.png`)} alt={category.title}/>
             <div>
-                <h1>{category.name}</h1>
+                <Link to={`/${category.name}`}><h1>{category.title}</h1></Link>
                 <p>{category.description}</p>
             </div>
         </div>

@@ -14,6 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../build")));
 
 app.use("/api/categories", require("./controllers/categories_controller"));
+app.use("/api/lists", require("./controllers/lists_controller"));
+app.use("/api/comments", require("./controllers/comments_controller"));
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../build/index.html"));

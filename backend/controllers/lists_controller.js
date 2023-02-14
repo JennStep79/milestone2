@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const db = require("../models");
-const { Category } = db;
+const { List } = db;
 
 router.get("/", (req, res) => {
     try {
-        Category.findAll()
-            .then(categories => res.json(categories));
+        List.findAll()
+            .then(lists => res.json(lists));
     } catch {
         res.send("Error.");
     }
