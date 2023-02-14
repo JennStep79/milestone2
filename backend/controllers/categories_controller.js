@@ -11,4 +11,28 @@ router.get("/", (req, res) => {
     }
 });
 
+router.get("/entertainment", (req, res) =>{
+    
+});
+
+router.get("/foods", (req, res) =>{
+
+});
+
+router.get("/misc", (req, res) =>{
+
+});
+
+router.get("/relationships", (req, res) =>{
+
+});
+
+router.get("/thrills", (req, res) =>{
+
+});
+
+router.get("/travels", (req, res) =>{
+
+});
+
 module.exports = router;
