@@ -1,12 +1,9 @@
-import './App.css'
-import React from 'react'
+import "../App.css";
 
 function LetsGetWild(){
     return(
-        <h1>  LETS GET ROWDYYYYY </h1>
+        <h1> LETS GET ROWDYYYYY </h1>
     )
 }
 
-
-
-export default LetsGetWild
+export default LetsGetWild;
