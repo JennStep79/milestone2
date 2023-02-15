@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./css/App.css";
 import Categories from "./components/Categories";
-import CategoryPage from "./components/CategoriesPage";
+import CategoryPage from "./components/CategoryPages";
 import CategoryContext from "./context/CategoryContext";
 
 function App() {
