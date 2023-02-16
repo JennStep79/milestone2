@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../App.css";
-
+import {Link} from 'react-router-dom'
 function Categories() {
     const [categories, setCategories] = useState([]);
 
@@ -18,7 +18,9 @@ function Categories() {
         <div key={index} className="tomb">
             <img src={require(`../img/${category.image}.png`)} alt={category.name}/>
             <div>
+                {/* <Link to = {`/${category.image}`}> */}
                 <h1>{category.name}</h1>
+                {/* </Link> */}
                 <p>{category.description}</p>
             </div>
         </div>

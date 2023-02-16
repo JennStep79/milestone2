@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
-import Home from './Components/Home';
-import LetsGetWild from './Components/LetsGetWild';
-import Categories from "./Components/Categories";
+import Home from './components/Home';
+import Categories from "./components/Categories";
+import CatList from "./components/CatList";
 
 function App() {
   return (
     <div>
       <Home/>
-      <LetsGetWild/>
       <Categories />
+      <CatList/>
     </div>
   );
 }

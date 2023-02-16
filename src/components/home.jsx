@@ -1,8 +1,12 @@
 import '../App.css';
-
+import '../components/Categories'
 function Home(){
+
     return(
-        <h1> home page </h1>
+      <h1>BUCK IT </h1>
+      
+       
+
     )
 }
 
