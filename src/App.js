@@ -24,14 +24,6 @@ function App() {
   });
 
   return (
-<<<<<<< HEAD
-    <div>
-      <Home />
-      <LetsGetWild />
-      <Categories />
-      <CatList/>
-    </div>
-=======
     <CategoryContext.Provider value={categories}>
       <Router>
         <Link to="/">
@@ -43,7 +35,6 @@ function App() {
         </Routes>
       </Router>
     </CategoryContext.Provider>
->>>>>>> main
   );
 }
 

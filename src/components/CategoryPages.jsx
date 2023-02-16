@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import ListForm from './ListForm';
 function CategoryPage(props) {
     const [Lists, setLists] = useState([]);
 
@@ -15,6 +15,7 @@ function CategoryPage(props) {
     return (
         <div>
             <div>{props.category.title}</div>
+            <ListForm/>
         </div>
         
     )
