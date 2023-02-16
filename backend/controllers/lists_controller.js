@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
     List.update(
-        {list_item: `${req.body}`},
+        req.body,
         {where: {list_id: `${req.params.id}`}}
     )
         .then(num => {

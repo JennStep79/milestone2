@@ -12,11 +12,17 @@ function CategoryPage(props) {
         fetchData();
     }, []);
 
+    let mapLists = Lists.map((list, index) => {
+        <div key={index}>
+            <p>{list.list_item}</p>
+        </div>
+    });
+
     return (
         <div>
-            <div>{props.category.title}</div>
-        </div>
-        
+            <h1>{props.category.title}</h1>
+            {mapLists}
+        </div> 
     )
 }
 
