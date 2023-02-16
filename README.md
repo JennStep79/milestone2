@@ -22,6 +22,10 @@ To use Buck-It!, browse through the categories for the types of activities you a
 </p>
 
 <br/>
+<br/>
+<br/>
+
+**********
 
 ## Technologies used in this app:
 * React (https://reactjs.org/) Version 18.2.0
