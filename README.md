@@ -24,7 +24,6 @@ To use Buck-It!, browse through the categories for the types of activities you a
 <br/>
 
 ## Technologies used in this app:
-***
 * React (https://reactjs.org/) Version 18.2.0
 * React-Router-Dom (https://www.npmjs.com/package/react-router-dom) Version 6.8.1
 * Express Version (https://expressjs.com/) 4.18.2
@@ -32,7 +31,6 @@ To use Buck-It!, browse through the categories for the types of activities you a
 * Node-Postgres (https://www.npmjs.com/package/pg) Version 8.9.0
 
 ## Collaborators:
-***
 * Alice Weng
 * Diana Cano
 * Aisha Rincon
