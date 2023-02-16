@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({Category, Comment}) {
-      List.hasOne(Comment, {
-        foreignKey: "comment_id"
+      List.hasMany(Comment, {
+        foreignKey: "list_id"
       });
       List.belongsTo(Category, {
         foreignKey: "category_id"
