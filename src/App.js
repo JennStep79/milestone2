@@ -26,8 +26,8 @@ function App() {
   return (
     <CategoryContext.Provider value={categories}>
       <Router>
-        <Link to="/">
-          <h1>Buck It</h1>
+        <Link className="container" to="/">
+          <img className="logo" src={require("./img/logowithtagline.png")}/>
         </Link>
         <Routes>
           <Route path="/" element={<Categories />}/>
