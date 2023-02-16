@@ -1,11 +1,9 @@
-import '../App.css';
+import "../App.css";
 
 function LetsGetWild(){
     return(
-        <h1>  LETS GET ROWDYYYYY </h1>
+        <h1> LETS GET ROWDYYYYY </h1>
     )
 }
-
-
 
 export default LetsGetWild;

@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import './App.css';
-import Home from './components/Home';
-import Categories from "./components/Categories";
-import CatList from "./components/CatList";
+import "./css/App.css";
+import Home from './Components/home';
+import LetsGetWild from './Components/letsgetwild';
+import Categories from "./Components/Categories";
 
 function App() {
   return (
     <div>
-      <Home/>
+      <Home />
+      <LetsGetWild />
       <Categories />
       <CatList/>
     </div>

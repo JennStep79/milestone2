@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --cyan: #4cc9f0;
+  --blue: #4361ee;
+  --hotpink: #f72585;
+  --purple: #7209b7;
+  --darkpurple: #3a0ca3;
+}
 .tomb {
   display: inline-flex;
   text-align: center;
