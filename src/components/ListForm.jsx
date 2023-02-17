@@ -1,33 +1,36 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
-function ListForm() {
- const [idea, setIdea] = useState({list_item: ""});
+function ListForm(props) {
+    const [idea, setIdea] = useState({
+        list_item: "",
+        category_id: 0
+    });
+
+    const textRef = useRef();
 
     async function handleSubmit(e) {
         e.preventDefault();
+        textRef.current.value = "";
         try {
             const response = await fetch('http://localhost:3001/api/lists', {
-                method:"POST",
+                method: "POST",
                 headers: {
-                    "Content-Type": "application/json;charset-utf-8"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(idea)
             });
-            // if(!response.ok) {
-            //     throw new error ("network response was not ok")
-            // }
             return await response.json();
         } catch (error) {
-            console.error("There was a problem with the fetch operation.");
+            console.error("Error.");
         }
     }
-    const handleChange = e => setIdea({list_item: e.target.value});
+    const handleChange = e => setIdea({list_item: e.target.value, category_id: props.id});
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <label htmlFor='idea'>Insert awesome idea here!</label>
-                <textarea id='idea' maxLength="255" onChange={handleChange} required></textarea>
+                <textarea id='idea' maxLength="255" onChange={handleChange} ref={textRef} required></textarea>
                 <button className="submit" type='submit'>Submit</button>
             </form>
         </div>
