@@ -1,16 +1,18 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 function ListForm(props) {
     const [idea, setIdea] = useState({
+        title: "",
         list_item: "",
         category_id: 0
     });
 
-    const textRef = useRef();
+    useEffect(() => {
+       setIdea({category_id: props.id}) 
+    }, []);
 
     async function handleSubmit(e) {
         e.preventDefault();
-        textRef.current.value = "";
         window.location.reload();
         try {
             const response = await fetch('http://localhost:3001/api/lists', {
@@ -25,16 +27,19 @@ function ListForm(props) {
             console.error("Error.");
         }
     }
-    const handleChange = e => setIdea({list_item: e.target.value, category_id: props.id});
+    const handleChange = e => {
+        setIdea({...idea, [e.target.id]: e.target.value});
+        console.log(idea)
+    }
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Enter your Buck-It list item.</label>
-                <input id="title" name="title" type="text" required/>
-                <label htmlFor='idea'>Describe your awesome idea here!</label>
-                <textarea id='idea' maxLength="255" onChange={handleChange} ref={textRef} required></textarea>
-                <button type='submit'>Submit</button>
+                <input id="title" name="title" type="text" onChange={handleChange} required/>
+                <label htmlFor="list_item">Describe your awesome idea here!</label>
+                <textarea id="list_item" maxLength="255" onChange={handleChange} required></textarea>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

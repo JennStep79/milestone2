@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       comment: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       list_id: {
         type: Sequelize.INTEGER,

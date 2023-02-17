@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
+    title: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     list_item: {
       type: DataTypes.STRING,
       allowNull: false

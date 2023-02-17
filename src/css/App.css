@@ -23,7 +23,7 @@ body {
 p {
   color: white;
 }
-.tomb, .item {
+.tomb {
   display: flex;
   text-align: center;
   align-items: center;
@@ -128,4 +128,7 @@ button {
   margin: 1em;
   padding: .5em 1em;
   cursor: pointer;
+}
+.item {
+  text-align: center;
 }
