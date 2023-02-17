@@ -23,13 +23,13 @@ body {
 p {
   color: white;
 }
-.tomb {
+.tomb, .item {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   background: var(--almostblack);
-  border-radius: 1em;
+  border-radius: .5em;
   max-width: 500px;
   padding: 1em;
   margin: 1em;
@@ -71,7 +71,6 @@ p {
 }
 h1 {
   font-size: 1.5em;
-  text-align: center;
   color: var(--green);
 }
 .link {
@@ -114,15 +113,18 @@ textarea {
   font-family: "Inter";
   height: 150px;
   width: 400px;
-  padding: 1em;
   resize: none;
-  border-radius: .5em;
 }
 label, textarea {
   display: block;
   padding: 1em;
 }
-.submit {
+input {
+  width: 200px;
+  height: 30px;
+  padding: 1em;
+}
+button {
   margin: 1em;
   padding: .5em 1em;
   cursor: pointer;

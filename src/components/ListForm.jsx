@@ -11,6 +11,7 @@ function ListForm(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         textRef.current.value = "";
+        window.location.reload();
         try {
             const response = await fetch('http://localhost:3001/api/lists', {
                 method: "POST",
@@ -29,9 +30,11 @@ function ListForm(props) {
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
-                <label htmlFor='idea'>Insert awesome idea here!</label>
+                <label htmlFor="title">Enter your Buck-It list item.</label>
+                <input id="title" name="title" type="text" required/>
+                <label htmlFor='idea'>Describe your awesome idea here!</label>
                 <textarea id='idea' maxLength="255" onChange={handleChange} ref={textRef} required></textarea>
-                <button className="submit" type='submit'>Submit</button>
+                <button type='submit'>Submit</button>
             </form>
         </div>
     )
