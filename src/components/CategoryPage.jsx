@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ListForm from './ListForm';
 
 function CategoryPage(props) {
-    const [Lists, setLists] = useState([]);
+    const [lists, setLists] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,10 +13,12 @@ function CategoryPage(props) {
         fetchData();
     }, []);
 
-    let mapLists = Lists.map((list, index) => {
-        <div key={index}>
-            <p>{list.list_item}</p>
-        </div>
+    let mapLists = lists.map((list, index) => {
+        return (
+            <div key={index}>
+                <p>{list.list_item}</p>
+            </div>
+        )
     });
 
     return (

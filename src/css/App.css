@@ -121,7 +121,6 @@ textarea {
 label, textarea {
   display: block;
   padding: 1em;
-  font-size: 1.2em;
 }
 .submit {
   margin: 1em;
