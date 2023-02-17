@@ -24,11 +24,11 @@ function ListForm() {
     const handleChange = e => setIdea({list_item: e.target.value});
 
     return (
-        <div>
+        <div className="container">
             <form onSubmit={handleSubmit}>
                 <label htmlFor='idea'>Insert awesome idea here!</label>
-                <textarea id='idea' maxLength="255" onChange={handleChange}></textarea>
-                <button type='submit'>Submit</button>
+                <textarea id='idea' maxLength="255" onChange={handleChange} required></textarea>
+                <button className="submit" type='submit'>Submit</button>
             </form>
         </div>
     )

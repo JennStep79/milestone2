@@ -21,7 +21,7 @@ function CategoryPage(props) {
 
     return (
         <div>
-            <div>{props.category.title}</div>
+            <h1>❝{props.category.title}❞</h1>
             <ListForm/>
             {mapLists}
         </div>
