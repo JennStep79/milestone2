@@ -28,8 +28,6 @@ function ListForm(){
                 <label htmlFor='idea'>Insert awesome idea here;</label>
                 <textarea id='idea' maxLength={255} onChange={handleChange}></textarea>
                 <button type = 'submit'>Submit</button>
-
-
             </form>
         </div>
     )

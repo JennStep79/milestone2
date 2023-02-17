@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Comments', {
+    await queryInterface.createTable('comments', {
       comment_id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,10 +11,19 @@ module.exports = {
       },
       comment: {
         type: Sequelize.STRING
+      },
+      list_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "lists",
+          key: "list_id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL"
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Comments');
+    await queryInterface.dropTable('comments');
   }
 };

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./css/App.css";
 import Categories from "./components/Categories";
-import CategoryPage from "./components/CategoryPages";
+import CategoryPage from "./components/CategoryPage";
 import CategoryContext from "./context/CategoryContext";
 
 function App() {
@@ -26,8 +26,8 @@ function App() {
   return (
     <CategoryContext.Provider value={categories}>
       <Router>
-        <Link to="/">
-          <h1>Buck It</h1>
+        <Link className="container" to="/">
+          <img className="logo" src={require("./img/Logowithtagline.png")}/>
         </Link>
         <Routes>
           <Route path="/" element={<Categories />}/>
