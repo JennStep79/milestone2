@@ -23,5 +23,5 @@ app.get("*", (req, res) => {
 
 //listen
 app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`);
+    console.log(`Filling your bucket from port: ${PORT}`);
 });
