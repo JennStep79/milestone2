@@ -1,13 +1,14 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
-function ListForm(){
- const [idea, setIdea] = useState({list_item:""});
-    async function handleSubmit(e){
-        e.preventDefault()
-        try{
-            const response = await fetch('http://localhost:3001/api/lists',{
+function ListForm() {
+ const [idea, setIdea] = useState({list_item: ""});
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:3001/api/lists', {
                 method:"POST",
-                headers:{
+                headers: {
                     "Content-Type": "application/json;charset-utf-8"
                 },
                 body: JSON.stringify(idea)
@@ -16,18 +17,18 @@ function ListForm(){
             //     throw new error ("network response was not ok")
             // }
             return await response.json();
-        }catch (error){
-            console.error("there was a problem with the fetch operation:",error)
+        } catch (error) {
+            console.error("There was a problem with the fetch operation.");
         }
     }
-    const handleChange = e=>setIdea({list_item:e.target.value})
+    const handleChange = e => setIdea({list_item: e.target.value});
 
-    return(
+    return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='idea'>Insert awesome idea here;</label>
-                <textarea id='idea' maxLength={255} onChange={handleChange}></textarea>
-                <button type = 'submit'>Submit</button>
+                <label htmlFor='idea'>Insert awesome idea here!</label>
+                <textarea id='idea' maxLength="255" onChange={handleChange}></textarea>
+                <button type='submit'>Submit</button>
             </form>
         </div>
     )

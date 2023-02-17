@@ -28,12 +28,13 @@ p {
   justify-content: center;
   background: #111111;
   border-radius: 1em;
-  max-width: 900px;
+  max-width: 500px;
   padding: 1em;
   margin: 1em;
   position: relative;
 }
 .tomb img {
+  width: 12em;
   z-index: 1;
 }
 .tomb p {
@@ -43,10 +44,10 @@ p {
   content: "";
   position: absolute;
   border-radius: 50%;
-  height: 18em;
-  width: 18em;
-  left: 6.2em;
-  top: 5.7em;
+  height: 11em;
+  width: 11em;
+  left: 1em;
+  top: 1em;
 }
 .tomb:nth-child(1)::before {
   background-color: var(--hotpink);
@@ -66,6 +67,9 @@ p {
 .tomb:nth-child(6)::before {
   background-color: var(--cyan);
 }
+h1 {
+  font-size: 1.5em;
+}
 .link {
   text-decoration: none;
   color: var(--green);
@@ -77,14 +81,15 @@ p {
   background: white;
   height: 2px;
   width: 0;
-  left: -10em;
-  bottom: 1em;
+  left: -7em;
+  bottom: .7em;
   transition: 500ms;
 }
 .link:hover::before {
-  width: 20em;
+  width: 14em;
 }
 .container {
+  padding: 1em;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -92,6 +97,6 @@ p {
   justify-content: center;
 }
 .logo {
-  height: 20em;
+  height: 15em;
   margin-top: 1.5em;
 }
