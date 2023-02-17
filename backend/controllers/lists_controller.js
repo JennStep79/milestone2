@@ -2,7 +2,7 @@ const router = require("express").Router();
 const db = require("../models");
 const { List } = db;
 
-router.get("/:id", (req, res) => {
+router.get("/category/:id", (req, res) => {
     List.findAll({
         where: {category_id: `${req.params.id}`}
     })
@@ -12,6 +12,15 @@ router.get("/:id", (req, res) => {
         .catch(() => {
             res.send("Error: Couldn't find lists.");
         });
+});
+
+router.get("/:id", (req, res) => {
+    List.findOne({
+        where: {list_id: `${req.params.id}`}
+    })
+        .then(list => {
+            res.json(list);
+        })
 });
 
 router.post("/", (req, res) => {

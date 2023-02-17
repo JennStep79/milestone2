@@ -24,4 +24,31 @@ router.post("/", (req, res) => {
         });
 });
 
+router.put("/:id", (req, res) => {
+    Comment.update(
+        req.body,
+        {where: {comment_id: `${req.params.id}`}}
+    )
+        .then(num => {
+            if(num == 1) {
+                res.send("Comment has been successfully updated.");
+            } else {
+                res.send("Error: Couldn't update comment.");
+            }
+        });
+});
+
+router.delete("/:id", (req, res) => {
+    Comment.destroy({
+        where: {comment_id: `${req.params.id}`}
+    })
+        .then(num => {
+            if(num == 1) {
+                res.send("Comment has been successfully deleted.");
+            } else {
+                res.send("Error: Couldn't delete comment.");
+            }
+        });
+});
+
 module.exports = router;
