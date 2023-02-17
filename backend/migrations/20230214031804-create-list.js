@@ -11,6 +11,15 @@ module.exports = {
       },
       list_item: {
         type: Sequelize.STRING
+      },
+      category_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "categories",
+          key: "category_id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL"
       }
     });
   },

@@ -11,6 +11,15 @@ module.exports = {
       },
       comment: {
         type: Sequelize.STRING
+      },
+      list_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "lists",
+          key: "list_id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL"
       }
     });
   },
