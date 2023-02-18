@@ -18,7 +18,7 @@ function CategoryPage(props) {
     let mapLists = lists.map((list, index) => {
         return (
             <div className="item" key={index}>
-                <Link to={`/${props.category.name}/${list.list_id}`}><h1>{list.title}</h1></Link>
+                <Link className="link" to={`/${props.category.name}/${list.list_id}`}><h2>{list.title}</h2></Link>
                 <p>{list.list_item}</p>
             </div>
         )
@@ -34,9 +34,7 @@ function CategoryPage(props) {
             ? <ListForm id={props.category.category_id}/>
             : null
             }
-            <div className="container">
-                {mapLists}
-            </div>
+            {mapLists}
         </>
     )
 }

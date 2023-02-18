@@ -36,9 +36,9 @@ function ListForm(props) {
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Enter your Buck-It list item.</label>
-                <input id="title" name="title" type="text" onChange={handleChange} required/>
+                <input id="title" name="title" type="text" maxLength="14" onChange={handleChange} required/>
                 <label htmlFor="list_item">Describe your awesome idea here!</label>
-                <textarea id="list_item" maxLength="255" onChange={handleChange} required></textarea>
+                <textarea id="list_item" name="list_item" maxLength="255" onChange={handleChange} required></textarea>
                 <button type="submit">Submit</button>
             </form>
         </div>
