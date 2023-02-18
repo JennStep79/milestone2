@@ -33,7 +33,7 @@ function App() {
   
   let mapListPages = lists.map((list, index) => {
     return (
-      <Route key={index} path={`/${list.list_id}`} element={<ListPage list={list}/>}/>
+      <Route key={index} path={`/:category/${list.list_id}`} element={<ListPage list={list}/>}/>
     )
   });
 
