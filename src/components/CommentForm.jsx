@@ -35,7 +35,7 @@ function CommentForm(props) {
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="comment">New Comment</label>
-                <textarea id="comment" name="comment" maxLength="255" onChange={handleChange}></textarea>
+                <textarea id="comment" name="comment" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
                 <button type="submit">Submit</button>
             </form>
         </div>

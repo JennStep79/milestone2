@@ -113,8 +113,6 @@ form {
 }
 textarea {
   font-family: "Inter";
-  height: 150px;
-  width: 400px;
   resize: none;
 }
 label, textarea {
