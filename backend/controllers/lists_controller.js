@@ -14,7 +14,8 @@ router.get("/category/all", (req, res) => {
 
 router.get("/category/:id", (req, res) => {
     List.findAll({
-        where: {category_id: `${req.params.id}`}
+        where: {category_id: `${req.params.id}`},
+        order: [["list_id", "DESC"]]
     })
         .then(lists => {
             res.json(lists);

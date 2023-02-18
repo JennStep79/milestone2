@@ -14,6 +14,7 @@ function Comments(props) {
 
     let mapComments = comments.map((comment, index) => {
         const handleDelete = () => {
+            window.location.reload();
             fetch(`http://localhost:3001/api/comments/${comment.comment_id}`, {
                 method: "DELETE"
             })

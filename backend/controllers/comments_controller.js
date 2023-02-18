@@ -4,7 +4,8 @@ const { Comment } = db;
 
 router.get("/:id", (req, res) => {
     Comment.findAll({
-        where: {list_id: `${req.params.id}`}
+        where: {list_id: `${req.params.id}`},
+        order: [["comment_id", "DESC"]]
     })
         .then(comments => {
             res.json(comments);
