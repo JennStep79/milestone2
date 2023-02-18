@@ -10,7 +10,7 @@ function Comments(props) {
             setComments(data);
         }
         fetchCommentData();
-    });
+    }, []);
 
     let mapComments = comments.map((comment, index) => {
         const handleDelete = () => {
