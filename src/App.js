@@ -42,7 +42,7 @@ function App() {
       <Router>
         <Link className="container" to="/">
           <img className="logo"
-               src={require("./img/Logowithtagline.png")}
+               src={require("./img/logowithtagline.png")}
                alt="Buck-It's logo, a bucket with a rainbow coming out of it."/>
         </Link>
         <Routes>
