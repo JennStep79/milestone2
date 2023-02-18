@@ -18,7 +18,7 @@ function CategoryPage(props) {
     let mapLists = lists.map((list, index) => {
         return (
             <div className="item" key={index}>
-                <Link to={`${props.category.name}/${list.list_id}`}><h1>{list.title}</h1></Link>
+                <Link to={`/${props.category.name}/${list.list_id}`}><h1>{list.title}</h1></Link>
                 <p>{list.list_item}</p>
             </div>
         )

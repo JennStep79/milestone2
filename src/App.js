@@ -4,22 +4,36 @@ import "./css/App.css";
 import Categories from "./components/Categories";
 import CategoryPage from "./components/CategoryPage";
 import CategoryContext from "./context/CategoryContext";
+import ListPage from "./components/ListPage";
 
 function App() {
   const [categories, setCategories] = useState([]);
+  const [lists, setLists] = useState([]);
 
   useEffect(() => {
-      const fetchData = async () => {
+      const fetchCategoryData = async () => {
           const response = await fetch("http://localhost:3001/api/categories")
           const data = await response.json()
           setCategories(data);
       }
-      fetchData();
+      fetchCategoryData();
+      const fetchListData = async () => {
+        const response = await fetch("http://localhost:3001/api/lists/category/all")
+        const data = await response.json()
+        setLists(data);
+      }
+      fetchListData();
   }, []);
 
-  let mapPages = categories.map((category, index) => {
+  let mapCategoryPages = categories.map((category, index) => {
     return (
         <Route key={index} path={`/${category.name}`} element={<CategoryPage category={category}/>}/>
+    )
+  });
+  
+  let mapListPages = lists.map((list, index) => {
+    return (
+      <Route key={index} path={`/${list.list_id}`} element={<ListPage list={list}/>}/>
     )
   });
 
@@ -29,11 +43,12 @@ function App() {
         <Link className="container" to="/">
           <img className="logo"
                src={require("./img/logowithtagline.png")}
-               alt="Buck It's logo, a bucket with a rainbow coming out of it."/>
+               alt="Buck-It's logo, a bucket with a rainbow coming out of it."/>
         </Link>
         <Routes>
           <Route path="/" element={<Categories />}/>
-          {mapPages}
+          {mapCategoryPages}
+          {mapListPages}
         </Routes>
       </Router>
     </CategoryContext.Provider>
