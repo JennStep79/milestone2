@@ -23,19 +23,19 @@ function Comments(props) {
             .then(res => res.json());
         }
 
-        const handleUpdate = () => {
-            console.log("test",comment);
+        // const handleUpdate = () => {
+        //     console.log("test",comment);
 
-            window.location.reload();
-            fetch(`http://localhost:3001/api/comments/${comment.comment_id}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(comment)
-            })
-            .then(res => res.json());
-        }
+        //     window.location.reload();
+        //     fetch(`http://localhost:3001/api/comments/${comment.comment_id}`, {
+        //         method: "PUT",
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: JSON.stringify(comment)
+        //     })
+        //     .then(res => res.json());
+        // }
 
         return (<>
             <div className="container" key={index}>

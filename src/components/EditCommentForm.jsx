@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 function EditCommentForm(props) {
     const [comment, setComment] = useState ([]);
-    const [clicked, setClicked] = useState(false);
-    };
+    // const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         setComment({comment_id: props.id}) 
@@ -34,11 +33,11 @@ function EditCommentForm(props) {
         <div className="container">
             <form onSubmit={handleEdit}>
                 <label htmlFor="comment">Edit comment</label>
-                <textarea id="comment" name="comment" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
+                <textarea value={comment} id="comment" name="comment" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
                 <button type="submit">Save Changes</button>
             </form>
         </div>
 
     )
-
+}
 export default EditCommentForm;
