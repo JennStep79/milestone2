@@ -5,15 +5,6 @@ import CommentForm from "./CommentForm";
 function ListPage(props) {
     const [clicked, setClicked] = useState(false);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`http://localhost:3001/api/lists/category/${props.category.category_id}`)
-            const data = await response.json()
-            setLists(data);
-        }
-        fetchData();
-    }, []);
-
     return (
         <>
             <div className="item">
