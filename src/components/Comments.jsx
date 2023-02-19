@@ -23,17 +23,6 @@ function Comments(props) {
             .then(res => res.json());
         }
 
-        const handleUpdate = () => {
-            fetch(`http://localhost:3001/api/comments/${comment.comment_id}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(comment)
-            })
-            .then(res => res.json());
-        }
-
         return (
             <>
                 { clicked

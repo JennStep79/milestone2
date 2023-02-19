@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 function EditCommentForm(props) {
     const [comment, setComment] = useState ([]);
-    const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         const fetchThisComment = async () => {
@@ -11,10 +10,9 @@ function EditCommentForm(props) {
             setComment(data);
         }
         fetchThisComment();
-        setComment({...comment, comment_id: props.id});
      }, []);
 
-    async function handleEdit(e) {
+    async function handleSubmit() {
         e.preventDefault();
         window.location.reload();
         try {
@@ -37,9 +35,9 @@ function EditCommentForm(props) {
 
     return (
         <div className="container">
-            <form onSubmit={handleEdit}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="comment">Edit comment</label>
-                <textarea id="comment" name="comment" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
+                <textarea id="comment" name="comment" placeholder={comment.comment} cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
                 <button type="submit">Save Changes</button>
             </form>
         </div>
