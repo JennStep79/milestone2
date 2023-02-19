@@ -3,6 +3,18 @@ const db = require("../models");
 const { Comment } = db;
 
 router.get("/:id", (req, res) => {
+    Comment.findOne({
+        where: {comment_id: `${req.params.id}`}
+    })
+        .then(comment => {
+            res.json(comment);
+        })
+        .catch(() => {
+            res.send("Error: Couldn't find comment.");
+        });
+});
+
+router.get("/list/:id", (req, res) => {
     Comment.findAll({
         where: {list_id: `${req.params.id}`},
         order: [["comment_id", "DESC"]]

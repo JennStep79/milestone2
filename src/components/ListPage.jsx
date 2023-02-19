@@ -16,7 +16,7 @@ function ListPage(props) {
                 : null
             }
             <div className="comments">
-                <Comments list={props.list}/>
+                <Comments id={props.list.list_id}/>
             </div>
             
             

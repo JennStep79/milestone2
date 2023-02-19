@@ -5,10 +5,15 @@ function EditCommentForm(props) {
     // const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
-        setComment({comment_id: props.id}) 
+        const fetchThisComment = async () => {
+            const response = await (`http://localhost:3001/api/comments/${props.id}`)
+            const data = await response.json();
+            setComment(data);
+        }
+        fetchThisComment();
      }, []);
 
-    async function handleEdit(e) {
+    async function handleSubmit() {
         e.preventDefault();
         window.location.reload();
         try {
@@ -31,13 +36,15 @@ function EditCommentForm(props) {
 
     return (
         <div className="container">
-            <form onSubmit={handleEdit}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="comment">Edit comment</label>
                 <textarea value={comment} id="comment" name="comment" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
+                <textarea id="comment" name="comment" placeholder={comment.comment} cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
                 <button type="submit">Save Changes</button>
             </form>
         </div>
 
     )
-}
+};
+
 export default EditCommentForm;
