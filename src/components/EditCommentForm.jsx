@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 function EditCommentForm(props) {
     const [comment, setComment] = useState ([]);
     const [clicked, setClicked] = useState(false);
-    };
 
     useEffect(() => {
-        setComment({comment_id: props.id}) 
+        const fetchThisComment = async () => {
+            const response = await (`http://localhost:3001/api/comments/${props.id}`)
+            const data = await response.json();
+            setComment(data);
+        }
+        fetchThisComment();
+        setComment({...comment, comment_id: props.id});
      }, []);
 
     async function handleEdit(e) {
@@ -40,5 +45,6 @@ function EditCommentForm(props) {
         </div>
 
     )
+};
 
 export default EditCommentForm;

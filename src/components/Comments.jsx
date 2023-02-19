@@ -7,7 +7,7 @@ function Comments(props) {
 
     useEffect(() => {
         const fetchCommentData = async () => {
-            const response = await fetch(`http://localhost:3001/api/comments/${props.list.list_id}`)
+            const response = await fetch(`http://localhost:3001/api/comments/list/${props.id}`)
             const data = await response.json()
             setComments(data);
         }
@@ -24,9 +24,6 @@ function Comments(props) {
         }
 
         const handleUpdate = () => {
-            console.log("test",comment);
-
-            window.location.reload();
             fetch(`http://localhost:3001/api/comments/${comment.comment_id}`, {
                 method: "PUT",
                 headers: {
@@ -37,15 +34,16 @@ function Comments(props) {
             .then(res => res.json());
         }
 
-        return (<>
-            <div className="container" key={index}>
-                <p>{comment.comment}</p>
-                <button onClick={() => setClicked(!clicked)}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
-            </div>
-            {clicked ? <EditCommentForm id={props.comment.comment_id}/> 
-                : null
-            }
+        return (
+            <>
+                { clicked
+                    ? <EditCommentForm id={comment.comment_id}/> 
+                    : <div className="container" key={index}>
+                        <p>{comment.comment}</p>
+                        <button onClick={() => setClicked(!clicked)}>Edit</button>
+                        <button onClick={handleDelete}>Delete</button>
+                      </div>
+                }
            </>
         )
     });
