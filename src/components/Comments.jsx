@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import EditCommentForm from "./EditCommentForm";
 
 function Comments(props) {
     const [comments, setComments] = useState([]);
-    const [clicked, setClicked] = useState(false);
+    // const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         const fetchCommentData = async () => {
-            const response = await fetch(`http://localhost:3001/api/comments/list/${props.id}`)
+            const response = await fetch(`http://localhost:3001/api/comments/${props.list.list_id}`)
             const data = await response.json()
             setComments(data);
         }
