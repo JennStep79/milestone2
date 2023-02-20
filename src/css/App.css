@@ -15,7 +15,7 @@
   --hotpink: #f72585;
   --darkpurple: #3a0ca3;
   --lightpurple: #9f7af5;
-  --almostblack: #4d4d4d;
+  --almostblack: #2e2d2d;
 }
 body {
   color: white;
@@ -139,10 +139,4 @@ button {
   margin: 1em auto;
 }
 
-div.container {
-  background-color: var(--almostblack);
-  border-radius: .5em;
-  text-align: center;
-  max-width: 800px;
-  margin: 1em auto;
-}
+
