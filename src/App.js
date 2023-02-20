@@ -5,6 +5,7 @@ import Categories from "./components/Categories";
 import CategoryPage from "./components/CategoryPage";
 import CategoryContext from "./context/CategoryContext";
 import ListPage from "./components/ListPage";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/" element={<Categories />}/>
           {mapCategoryPages}
           {mapListPages}
+          <Route path="/*" element={<PageNotFound/>}/>
         </Routes>
       </Router>
     </CategoryContext.Provider>
