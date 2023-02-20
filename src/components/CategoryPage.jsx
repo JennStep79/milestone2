@@ -31,7 +31,7 @@ function CategoryPage(props) {
             <Link className="container" to="/">
                 <img className="logo"
                 src={require("../img/home.png")}
-                alt="Buck-It's logo, a bucket with a rainbow coming out of it."/>
+                alt="Buck-It's logo, a bucket with a rainbow coming out of it saying 'home'."/>
             </Link>
             <h1 className="cat-title">❝{props.category.title}❞</h1>
             <div className="newidea">

@@ -22,11 +22,11 @@ function Categories() {
 
     return (
         <>
-            <Link className="container" to="/">
+            <div className="container">
                 <img className="logo"
                 src={require("../img/logowithtagline.png")}
-                alt="Buck-It's logo, a bucket with a rainbow coming out of it."/>
-            </Link>
+                alt="Buck-It's logo, a bucket with a rainbow coming out of it saying 'fill your bucket before you kick it'."/>
+            </div>
             <div className="container">
                 {mapCategories}
             </div>
