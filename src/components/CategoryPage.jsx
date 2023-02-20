@@ -28,8 +28,8 @@ function CategoryPage(props) {
 
     return (
         <>
-                <h1>❝{props.category.title}❞</h1>
-                <button onClick={() => setClicked(!clicked)}>I have a new idea!</button>
+            <h1>❝{props.category.title}❞</h1>
+            <button onClick={() => setClicked(!clicked)}>I have a new idea!</button>
             { clicked
             ? <ListForm id={props.category.category_id}/>
             : null
