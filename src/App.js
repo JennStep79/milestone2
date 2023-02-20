@@ -31,7 +31,7 @@ function App() {
         <Route key={index} path={`/${category.name}`} element={<CategoryPage category={category}/>}/>
     )
   });
-  
+
   let mapListPages = lists.map((list, index) => {
     return (
       <Route key={index} path={`/:category/${list.list_id}`} element={<ListPage list={list}/>}/>

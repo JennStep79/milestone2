@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Comments from "./Comments";
 import CommentForm from "./CommentForm";
 import EditListItem from "./EditListItem";
@@ -35,6 +35,11 @@ function ListPage(props) {
 
     return (
         <>
+            <Link className="container" to="/">
+                <img className="logo"
+                src={require("../img/home.png")}
+                alt="Buck-It's logo, a bucket with a rainbow coming out of it saying 'home'."/>
+            </Link>
             { editClicked
                 ? <EditListItem id={props.list.list_id}/>
                 :
