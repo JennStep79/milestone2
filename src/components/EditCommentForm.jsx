@@ -12,7 +12,7 @@ function EditCommentForm(props) {
         fetchThisComment();
      }, []);
 
-    async function handleSubmit() {
+    async function handleSubmit(e) {
         e.preventDefault();
         window.location.reload();
         try {

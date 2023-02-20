@@ -23,16 +23,17 @@ function Comments(props) {
             .then(res => res.json());
         }
 
+        const handleEdit = () => {
+            
+        }
+
         return (
             <>
-                { clicked
-                    ? <EditCommentForm id={comment.comment_id}/> 
-                    : <div className="container" key={index}>
-                        <p>{comment.comment}</p>
-                        <button onClick={() => setClicked(!clicked)}>Edit</button>
-                        <button onClick={handleDelete}>Delete</button>
-                      </div>
-                }
+                <div className="container" key={index}>
+                    <p>{comment.comment}</p>
+                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
            </>
         )
     });
