@@ -31,12 +31,13 @@ function EditListItem(props) {
 
     const handleChange = e => {
         setList({...list, [e.target.id]: e.target.value});
-        console.log(list)
     }
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
+                <label htmlFor="title">Change your title here.</label>
+                <input id="title" name="title" type="text" defaultValue={list.title} onChange={handleChange} required/>
                 <label htmlFor="list_item">Edit your Buck-It list item.</label>
                 <textarea id="list_item" name="list_item" cols="50" rows="3" maxLength="255" defaultValue={list.list_item} onChange={handleChange} required></textarea>
                 <button type="submit">Save Changes</button>
