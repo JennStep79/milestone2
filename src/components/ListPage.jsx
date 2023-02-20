@@ -6,6 +6,8 @@ import { AiOutlineEdit } from "react-icons/ai";
 import{ BsReply } from "react-icons/bs"
 import{ MdOutlineDelete } from "react-icons/md"
 
+//Buttons to edit, reply, and delete for posts
+
 function ListPage(props) {
     const [replyClicked, setReplyClicked] = useState(false);
     const [editClicked, setEditClicked] = useState(false);
@@ -17,7 +19,7 @@ function ListPage(props) {
         })
         .then(res => res.json());
     }
-//Buttons to edit, reply, and delete for posts
+
     return (
         <>
             { editClicked

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+//creating a new post
+
 function ListForm(props) {
     const [idea, setIdea] = useState({
         title: "",

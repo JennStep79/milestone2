@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../css/App.css";
 import CategoryContext from "../context/CategoryContext";
 
+//All the tombstones on the landing page 
+
 function Categories() {
     const categories = useContext(CategoryContext);
 

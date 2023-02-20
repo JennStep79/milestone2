@@ -13,6 +13,8 @@ function Comments(props) {
         fetchCommentData();
     }, []);
 
+//deleting comments 
+
     let mapComments = comments.map((comment, index) => {
         const handleDelete = () => {
             window.location.reload();
@@ -24,7 +26,7 @@ function Comments(props) {
 
         return (
             <>
-                <div className="container" key={index}>
+                <div className="replies" key={index}>
                     <p>{comment.comment}</p>
                     <button onClick={handleDelete}>< MdOutlineDelete/> </button>
                 </div>

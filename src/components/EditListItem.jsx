@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+//Edit functionality for posts 
+
 function EditListItem(props) {
     const [list, setList] = useState ([]);
 
