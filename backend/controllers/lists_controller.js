@@ -62,5 +62,18 @@ router.put("/:id", (req, res) => {
         });
 });
 
+router.delete("/:id", (req, res) => {
+    List.destroy({
+        where: {list_id: `${req.params.id}`}
+    })
+        .then(num => {
+            if(num == 1) {
+                res.send("List has been successfully deleted.");
+            } else {
+                res.send("Error: Couldn't delete list.");
+            }
+        });
+});
+
 
 module.exports = router;

@@ -7,6 +7,14 @@ function ListPage(props) {
     const [replyClicked, setReplyClicked] = useState(false);
     const [editClicked, setEditClicked] = useState(false);
 
+    const handleDelete = () => {
+        window.location.reload();
+        fetch(`http://localhost:3001/api/lists/${props.list.list_id}`, {
+            method: "DELETE"
+        })
+        .then(res => res.json());
+    }
+
     return (
         <>
             { editClicked
@@ -17,6 +25,7 @@ function ListPage(props) {
                     <p>{props.list.list_item}</p>
                     <button id="edit" onClick={() => setEditClicked(!editClicked)}>Edit</button>
                     <button id="reply" onClick={() => setReplyClicked(!replyClicked)}>Reply</button>
+                    <button onClick={handleDelete}>Delete</button>
                 </div>
             }
             {replyClicked ? <CommentForm id={props.list.list_id}/> 
@@ -25,8 +34,6 @@ function ListPage(props) {
             <div className="comments">
                 <Comments id={props.list.list_id}/>
             </div>
-            
-            
         </>
     )
 }
