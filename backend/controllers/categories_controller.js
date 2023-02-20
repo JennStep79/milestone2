@@ -2,6 +2,8 @@ const router = require("express").Router();
 const db = require("../models");
 const { Category } = db;
 
+// GET route for all the categories.
+
 router.get("/", (req, res) => {
     Category.findAll()
         .then(categories => {
@@ -11,6 +13,8 @@ router.get("/", (req, res) => {
             res.send("Error: Couldn't find categories.");
         });
 });
+
+// GET route for one specific category.
 
 router.get("/:id", (req, res) => {
     Category.findOne({

@@ -2,6 +2,8 @@ const router = require("express").Router();
 const db = require("../models");
 const { List } = db;
 
+// GET route for one specific list.
+
 router.get("/:id", (req, res) => {
     List.findOne({
         where: {list_id: `${req.params.id}`}
@@ -12,8 +14,9 @@ router.get("/:id", (req, res) => {
         .catch(() => {
             res.send("Error: Couldn't find this list.");
         });
-        
 });
+
+// GET route for all lists.
 
 router.get("/category/all", (req, res) => {
     List.findAll()
@@ -24,6 +27,8 @@ router.get("/category/all", (req, res) => {
             res.send("Error: Couldn't find all lists.");
         })
 });
+
+// GET route for all lists related to a specific category.
 
 router.get("/category/:id", (req, res) => {
     List.findAll({
@@ -38,6 +43,8 @@ router.get("/category/:id", (req, res) => {
         });
 });
 
+// POST route for new lists.
+
 router.post("/", (req, res) => {
     List.create(req.body)
         .then(data => {
@@ -47,6 +54,8 @@ router.post("/", (req, res) => {
             res.send("Error: Couldn't post list.");
         });
 });
+
+// PUT route for updating an existing list.
 
 router.put("/:id", (req, res) => {
     List.update(
@@ -61,6 +70,8 @@ router.put("/:id", (req, res) => {
             }
         });
 });
+
+// DELETE route for a specific list.
 
 router.delete("/:id", (req, res) => {
     List.destroy({
