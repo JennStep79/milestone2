@@ -26,9 +26,9 @@ function ListPage(props) {
                 <div className="item">
                     <h2>{props.list.title}</h2>
                     <p>{props.list.list_item}</p>
-                    <button id="edit" onClick={() => setEditClicked(!editClicked)}><AiOutlineEdit /></button>
-                    <button id="reply" onClick={() => setReplyClicked(!replyClicked)}><BsReply/></button>
-                    <button onClick={handleDelete}><MdOutlineDelete /></button>
+                    <button id="edit" onClick={() => setEditClicked(!editClicked)}><AiOutlineEdit title="edit"/></button>
+                    <button id="reply" onClick={() => setReplyClicked(!replyClicked)}><BsReply title="reply"/></button>
+                    <button onClick={handleDelete}><MdOutlineDelete title="delete" /></button>
                 </div>
             }
             {replyClicked ? <CommentForm id={props.list.list_id}/> 
