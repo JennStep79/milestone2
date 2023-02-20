@@ -138,6 +138,10 @@ button {
   max-width: 800px;
   margin: 1em auto;
 }
+.error {
+  height: 50em;
+  width: auto;
+}
 
 .replies {
   background: var(--almostblack);
