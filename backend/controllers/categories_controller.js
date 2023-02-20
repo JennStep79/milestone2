@@ -12,4 +12,16 @@ router.get("/", (req, res) => {
         });
 });
 
+router.get("/:id", (req, res) => {
+    Category.findOne({
+        where: {category_id: `${req.params.id}`}
+    })
+        .then(category => {
+            res.json(category);
+        })
+        .catch(() => {
+            res.send("Error: Couldn't find category.");
+        })
+});
+
 module.exports = router;

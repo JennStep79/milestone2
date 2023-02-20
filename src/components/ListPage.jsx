@@ -1,21 +1,34 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Comments from "./Comments";
 import CommentForm from "./CommentForm";
 import EditListItem from "./EditListItem";
 import { AiOutlineEdit } from "react-icons/ai";
-import{ BsReply } from "react-icons/bs"
-import{ MdOutlineDelete } from "react-icons/md"
+import { BsReply } from "react-icons/bs";
+import { MdOutlineDelete } from "react-icons/md";
 
 function ListPage(props) {
     const [replyClicked, setReplyClicked] = useState(false);
     const [editClicked, setEditClicked] = useState(false);
+    const [category, setCategory] = useState({});
+
+    useEffect(() => {
+        const fetchCategory = async () => {
+            const response = await fetch(`http://localhost:3001/api/categories/${props.list.category_id}`)
+            const data = await response.json();
+            setCategory(data);
+        }
+        fetchCategory();
+    }, []);
+
+    const navigate = useNavigate();
 
     const handleDelete = () => {
-        window.location.reload();
         fetch(`http://localhost:3001/api/lists/${props.list.list_id}`, {
             method: "DELETE"
         })
         .then(res => res.json());
+        navigate(`/${category.name}`);
     }
 //Buttons to edit, reply, and delete for posts
     return (
@@ -28,7 +41,7 @@ function ListPage(props) {
                     <p>{props.list.list_item}</p>
                     <button id="edit" onClick={() => setEditClicked(!editClicked)}><AiOutlineEdit title="edit"/></button>
                     <button id="reply" onClick={() => setReplyClicked(!replyClicked)}><BsReply title="reply"/></button>
-                    <button onClick={handleDelete}><MdOutlineDelete title="delete" /></button>
+                    <button onClick={handleDelete}><MdOutlineDelete title="delete"/></button>
                 </div>
             }
             {replyClicked ? <CommentForm id={props.list.list_id}/> 
