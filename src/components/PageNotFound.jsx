@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function PageNotFound() {
     return (
-        <div>
+        <div className="flex">
             <img className="error" src={require("../img/404.png")} alt="A rain cloud over an empty bucket and the words 'Oh no! This bucket is empty! 404"/>
-            <img className="home" src={require("../img/404-home.png")} alt="A rainbow that says 'take me home'."/>
+            <Link to="/"><img className="home" src={require("../img/404-home.png")} alt="A rainbow that says 'take me home'."/></Link>
         </div>
     )
 }

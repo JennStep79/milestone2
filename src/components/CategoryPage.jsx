@@ -34,7 +34,7 @@ function CategoryPage(props) {
                 alt="Buck-It's logo, a bucket with a rainbow coming out of it saying 'home'."/>
             </Link>
             <h1 className="cat-title">❝{props.category.title}❞</h1>
-            <div className="newidea">
+            <div className="flex">
             <button  onClick={() => setClicked(!clicked)}>I have a new idea!</button></div>
             { clicked
             ? <ListForm id={props.category.category_id}/>

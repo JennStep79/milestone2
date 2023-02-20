@@ -138,10 +138,6 @@ button {
   max-width: 800px;
   margin: 1em auto;
 }
-.error {
-  height: 50em;
-  width: auto;
-}
 
 .replies {
   background: var(--almostblack);
@@ -154,14 +150,22 @@ button {
 .cat-title {
   text-align: center;
 }
-
-.newidea {
+.error {
+  width: 1000px;
+  padding-top: 2.5em;
+}
+.flex {
+  width: 1000px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .home {
   position: absolute;
-  left: 10em;
+  left: 5em;
+  top: -5em;
+  
 }
