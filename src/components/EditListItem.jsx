@@ -37,7 +37,7 @@ function EditListItem(props) {
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="list">Edit comment</label>
+                <label htmlFor="list">Edit your Buck-It list item.</label>
                 <textarea value={list.list_item} id="list" name="list" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
                 <button type="submit">Save Changes</button>
             </form>

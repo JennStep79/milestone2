@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 
 function Comments(props) {
     const [comments, setComments] = useState([]);
-    // const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         const fetchCommentData = async () => {
-            const response = await fetch(`http://localhost:3001/api/comments/${props.list.list_id}`)
+            const response = await fetch(`http://localhost:3001/api/comments/${props.id}`)
             const data = await response.json()
             setComments(data);
         }
@@ -22,16 +21,11 @@ function Comments(props) {
             .then(res => res.json());
         }
 
-        const handleEdit = () => {
-            
-        }
-
         return (
             <>
                 <div className="container" key={index}>
                     <p>{comment.comment}</p>
-                    <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button onClick={handleDelete}>X</button>
                 </div>
            </>
         )

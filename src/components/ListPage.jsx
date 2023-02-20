@@ -9,16 +9,17 @@ function ListPage(props) {
 
     return (
         <>
-            <div className="item">
-                <h2>{props.list.title}</h2>
-                <p>{props.list.list_item}</p>
-                <button id="edit" onClick={() => setEditClicked(!editClicked)}>Edit</button>
-                <button id="reply" onClick={() => setReplyClicked(!replyClicked)}>Reply</button>
-            </div>
-            {replyClicked ? <CommentForm id={props.list.list_id}/> 
-                : null
+            { editClicked
+                ? <EditListItem id={props.list.list_id}/>
+                :
+                <div className="item">
+                    <h2>{props.list.title}</h2>
+                    <p>{props.list.list_item}</p>
+                    <button id="edit" onClick={() => setEditClicked(!editClicked)}>Edit</button>
+                    <button id="reply" onClick={() => setReplyClicked(!replyClicked)}>Reply</button>
+                </div>
             }
-            {editClicked ? <EditListItem id={props.list.list_id}/> 
+            {replyClicked ? <CommentForm id={props.list.list_id}/> 
                 : null
             }
             <div className="comments">
