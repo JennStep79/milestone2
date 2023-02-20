@@ -146,3 +146,13 @@ button {
   max-width: 800px;
   margin: 1em auto;
 }
+
+.cat-title {
+  text-align: center;
+}
+
+.newidea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
