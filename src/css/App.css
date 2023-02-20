@@ -160,3 +160,8 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+.home {
+  position: absolute;
+  left: 10em;
+}
