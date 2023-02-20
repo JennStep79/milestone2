@@ -15,7 +15,7 @@
   --hotpink: #f72585;
   --darkpurple: #3a0ca3;
   --lightpurple: #9f7af5;
-  --almostblack: #4d4d4d;
+  --almostblack: #202020;
 }
 body {
   color: white;
@@ -138,4 +138,3 @@ button {
   max-width: 800px;
   margin: 1em auto;
 }
-

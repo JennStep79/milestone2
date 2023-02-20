@@ -28,7 +28,7 @@ function Comments(props) {
             <>
                 <div className="replies" key={index}>
                     <p>{comment.comment}</p>
-                    <button onClick={handleDelete}>< MdOutlineDelete/> </button>
+                    <button title="delete" onClick={handleDelete}><MdOutlineDelete/></button>
                 </div>
            </>
         )
