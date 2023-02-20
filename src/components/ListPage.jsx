@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Comments from "./Comments";
 import CommentForm from "./CommentForm";
 import EditListItem from "./EditListItem";
+import { AiOutlineEdit } from "react-icons/ai";
+import{ BsReply } from "react-icons/bs"
+import{ MdOutlineDelete } from "react-icons/md"
 
 function ListPage(props) {
     const [replyClicked, setReplyClicked] = useState(false);
@@ -14,7 +17,7 @@ function ListPage(props) {
         })
         .then(res => res.json());
     }
-
+//Buttons for edit, reply, and delete for posts
     return (
         <>
             { editClicked
@@ -23,9 +26,9 @@ function ListPage(props) {
                 <div className="item">
                     <h2>{props.list.title}</h2>
                     <p>{props.list.list_item}</p>
-                    <button id="edit" onClick={() => setEditClicked(!editClicked)}>Edit</button>
-                    <button id="reply" onClick={() => setReplyClicked(!replyClicked)}>Reply</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button id="edit" onClick={() => setEditClicked(!editClicked)}><AiOutlineEdit /></button>
+                    <button id="reply" onClick={() => setReplyClicked(!replyClicked)}><BsReply/></button>
+                    <button onClick={handleDelete}><MdOutlineDelete /></button>
                 </div>
             }
             {replyClicked ? <CommentForm id={props.list.list_id}/> 

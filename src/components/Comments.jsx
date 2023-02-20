@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import{ MdOutlineDelete } from "react-icons/md"
 
 function Comments(props) {
     const [comments, setComments] = useState([]);
@@ -25,7 +26,7 @@ function Comments(props) {
             <>
                 <div className="container" key={index}>
                     <p>{comment.comment}</p>
-                    <button onClick={handleDelete}>X</button>
+                    <button onClick={handleDelete}>< MdOutlineDelete/> </button>
                 </div>
            </>
         )
