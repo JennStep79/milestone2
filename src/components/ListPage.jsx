@@ -17,7 +17,7 @@ function ListPage(props) {
         })
         .then(res => res.json());
     }
-//Buttons for edit, reply, and delete for posts
+//Buttons to edit, reply, and delete for posts
     return (
         <>
             { editClicked
