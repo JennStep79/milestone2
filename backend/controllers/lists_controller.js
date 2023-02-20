@@ -48,5 +48,19 @@ router.post("/", (req, res) => {
         });
 });
 
+router.put("/:id", (req, res) => {
+    List.update(
+        req.body,
+        {where: {list_id: `${req.params.id}`}}
+    )
+        .then(num => {
+            if(num == 1) {
+                res.send(req.body);
+            } else {
+                res.send("Error: Couldn't update list.");
+            }
+        });
+});
+
 
 module.exports = router;

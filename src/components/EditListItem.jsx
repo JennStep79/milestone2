@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 
 function EditListItem(props) {
     const [list, setList] = useState ([]);
-    // const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         const fetchThisList = async () => {
-            const response = await (`http://localhost:3001/api/lists/${props.id}`)
+            const response = await fetch(`http://localhost:3001/api/lists/${props.id}`)
             const data = await response.json();
             setList(data);
         }
@@ -17,7 +16,7 @@ function EditListItem(props) {
         e.preventDefault();
         window.location.reload();
         try {
-            const response = await fetch(`http://localhost:3001/api/list/${list.list_id}`, {
+            const response = await fetch(`http://localhost:3001/api/lists/${list.list_id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -32,17 +31,17 @@ function EditListItem(props) {
 
     const handleChange = e => {
         setList({...list, [e.target.id]: e.target.value});
+        console.log(list)
     }
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="list">Edit your Buck-It list item.</label>
-                <textarea value={list.list_item} id="list" name="list" cols="50" rows="3" maxLength="255" onChange={handleChange}></textarea>
+                <label htmlFor="list_item">Edit your Buck-It list item.</label>
+                <textarea id="list_item" name="list_item" cols="50" rows="3" maxLength="255" defaultValue={list.list_item} onChange={handleChange} required></textarea>
                 <button type="submit">Save Changes</button>
             </form>
         </div>
-
     )
 };
 
