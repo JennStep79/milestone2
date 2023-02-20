@@ -28,6 +28,11 @@ function CategoryPage(props) {
 
     return (
         <>
+            <Link className="container" to="/">
+                <img className="logo"
+                src={require("../img/home.png")}
+                alt="Buck-It's logo, a bucket with a rainbow coming out of it."/>
+            </Link>
             <h1 className="cat-title">❝{props.category.title}❞</h1>
             <div className="newidea">
             <button  onClick={() => setClicked(!clicked)}>I have a new idea!</button></div>
